@@ -1,44 +1,52 @@
-import { A } from "@solidjs/router";
-import Counter from "~/components/Counter";
+import { A } from '@solidjs/router'
+import Counter from '~/components/Counter'
 
 export default function Home() {
   return (
-    <main class="text-center mx-auto text-gray-700 p-4">
-      <h1 class="max-6-xs text-6xl text-sky-700 font-thin uppercase my-16">
-        <div class="flex justify-center items-center">
-          <span class="mr-5">Hello</span> <img class="w-12 h-12" src="https://unocss.dev/logo.svg" alt="UnoCSS logo" />!
+    <main class="mx-auto p-4 text-center text-gray-700">
+      <h1 class="max-6-xs my-16 text-6xl text-sky-700 font-thin uppercase">
+        <div class="flex items-center justify-center">
+          <span class="mr-5">Hello</span>
+          {' '}
+          <img class="h-12 w-12" src="https://unocss.dev/logo.svg" alt="UnoCSS logo" />
+          !
         </div>
       </h1>
       <Counter />
       <p class="mt-8">
-        Visit{" "}
+        Visit
+        {' '}
         <a
           href="https://solidjs.com"
           target="_blank"
           class="text-sky-600 hover:underline"
         >
           solidjs.com
-        </a>{" "}
+        </a>
+        {' '}
         to learn how to build Solid apps.
       </p>
       <p class="mt-2">
-        Visit{" "}
+        Visit
+        {' '}
         <a
           href="https://unocss.dev"
           target="_blank"
           class="text-sky-600 hover:underline"
         >
           unocss.dev
-        </a>{" "}
+        </a>
+        {' '}
         to learn how to style your app.
       </p>
       <p class="my-4">
         <span>Home</span>
-        {" - "}
+        {' - '}
         <A href="/about" class="text-sky-600 hover:underline">
           About Page
-        </A>{" "}
+        </A>
+        {' '}
       </p>
     </main>
-  );
+  )
 }
