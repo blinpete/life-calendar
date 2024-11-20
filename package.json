@@ -1,18 +1,27 @@
 {
-  "name": "example-with-unocss",
+  "name": "life-calendar",
   "type": "module",
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start"
+    "start": "vinxi start",
+    "lint": "eslint . --fix"
   },
   "dependencies": {
+    "@iconify-json/ph": "^1.2.1",
     "@solidjs/router": "^0.15.0",
     "@solidjs/start": "^1.0.10",
-    "@unocss/reset": "^0.59.2",
+    "@unocss/reset": "^0.63.1",
     "solid-js": "^1.9.2",
-    "unocss": "^0.59.2",
     "vinxi": "^0.4.3"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.7.3",
+    "@unocss/eslint-config": "^0.63.1",
+    "@unocss/eslint-plugin": "^0.63.1",
+    "eslint": "^9.15.0",
+    "eslint-plugin-solid": "^0.14.4",
+    "unocss": "^0.63.1"
   },
   "engines": {
     "node": ">=18"
