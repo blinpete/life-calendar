@@ -30,7 +30,12 @@ export default defineConfig({
     'help-accent': 'text-main dark:font-normal light:font-500',
   },
   presets: [
-    presetUno(),
+    presetUno({
+      dark: {
+        dark: ':root[data-kb-theme="dark"]',
+        light: ':root[data-kb-theme="light"]',
+      },
+    }),
     presetAttributify(),
 
     // https://unocss.dev/presets/icons

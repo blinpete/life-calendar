@@ -1,21 +1,16 @@
-import { useLocation } from '@solidjs/router'
+import { A, useLocation } from '@solidjs/router'
+import clsx from 'clsx'
 
 export default function Nav() {
   const location = useLocation()
-  const active = (path: string) =>
-    path === location.pathname
-      ? 'border-sky-600'
-      : 'border-transparent hover:border-sky-600'
+  const active = (path: string) => path === location.pathname
+    ? 'underline-solid !underline-[#777]'
+    : ''
+
   return (
-    <nav class="bg-sky-800">
-      <ul class="flex items-center p-3 text-gray-200 container">
-        <li class={`border-b-2 ${active('/')} mx-1.5 sm:mx-6`}>
-          <a href="/">Home</a>
-        </li>
-        <li class={`border-b-2 ${active('/about')} mx-1.5 sm:mx-6`}>
-          <a href="/about">About</a>
-        </li>
-      </ul>
+    <nav class="flex gap-1.5">
+      <A class={clsx('link', active('/'))} href="/">Index</A>
+      <A class={clsx('link', active('/about'))} href="/about">About</A>
     </nav>
   )
 }
