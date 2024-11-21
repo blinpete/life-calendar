@@ -19,8 +19,6 @@ export default function (props: Props) {
 
   return (
     <div class="flex gap-2 items-center">
-      {/* <div>{event.start?.toLocaleDateString('sv')}</div> */}
-      {/* <div>{event.start} - {event.end}</div> */}
       <ColorPicker
         value={() => props.event.style['background-color'] as string}
         setValue={(val) => {
@@ -29,17 +27,6 @@ export default function (props: Props) {
               'background-color': val,
             },
           })
-        }}
-      />
-      <input
-        type="text"
-        value={props.event.name}
-        onChange={(e) => {
-          props.onUpdate({ name: e.target.value })
-        }}
-        class="bg-main text-subtle focus:(text-main bg-subtle) flex-1 focus:border-(1 main solid) rounded-sm px-1 outline-none"
-        classList={{
-          'border-(1 main solid)': props.event === newEvent,
         }}
       />
 
@@ -69,12 +56,23 @@ export default function (props: Props) {
         </button>
       </Show>
 
+      <input
+        type="text"
+        value={props.event.name}
+        onChange={(e) => {
+          props.onUpdate({ name: e.target.value })
+        }}
+        class="bg-main text-subtle focus:(text-main bg-subtle) flex-1 focus:border-(1 main solid) rounded-sm px-1 outline-none"
+        classList={{
+          'border-(1 main solid)': props.event === newEvent,
+        }}
+      />
+
       <button
         class="btn-icon -mr-0.5"
         onClick={() => props.onDelete()}
 
       >
-        {/* <span class="i-ph-trash" /> */}
         <span class="i-ph-plus-circle-light rotate-45" />
       </button>
     </div>
