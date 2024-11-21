@@ -7,7 +7,9 @@ export const [
   setLifeStore,
   initLifeStore,
 ] = makePersisted(createStore<LifeStore>({
-  showSettings: true,
+  showSettings: false,
+  showLayers: true,
+  weekStartsOn: 1,
   birthday: '',
   activeLayerIndex: 0,
   layers: [

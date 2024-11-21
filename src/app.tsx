@@ -31,7 +31,7 @@ export default function App() {
               <header class="flex justify-between gap-4 px-3 py-2">
                 <Nav />
 
-                <ThemeSwitcher class="pos-fixed right-3 top-9.5 text-subtle hover:text-main" />
+                <ThemeSwitcher class="pos-fixed right-3 top-3 text-subtle hover:text-main" />
               </header>
               <main class="flex flex-col items-center px-4">
                 <Suspense>{props.children}</Suspense>

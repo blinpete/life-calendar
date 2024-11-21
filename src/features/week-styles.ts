@@ -7,7 +7,7 @@ import { getThemedColor } from '~/shared/colors-utils'
 import { dayStylesByTheme } from '~/shared/default-colors'
 import type { LifeEvent } from '~/shared/types'
 
-export const now = new Date()
+const now = new Date()
 
 export type WeekToEventsMap = WeakMap<Date, Set<LifeEvent>>
 
@@ -24,8 +24,8 @@ export function getWeekStyle(
     Object.assign(css, dayStylesByTheme[colorMode].past)
   }
 
-  // before birth
-  if (week < startOfWeek(lifeStore.birthday)) {
+  // before birth, or future
+  if (week < startOfWeek(lifeStore.birthday) || week > now) {
     Object.assign(css, dayStylesByTheme[colorMode].future)
     css['background-color'] = 'transparent'
   }

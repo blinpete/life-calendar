@@ -1,20 +1,24 @@
 import type { WeekToEventsMap } from './week-styles'
 import { flip, offset, shift } from '@floating-ui/dom'
 import { useColorMode } from '@kobalte/core/color-mode'
-import { eachWeekOfInterval, formatDate, getYear, isSameDay, startOfYear } from 'date-fns'
+import { eachWeekOfInterval, endOfISOWeekYear, endOfYear, formatDate, getYear, isSameDay, setDefaultOptions, startOfISOWeekYear, startOfWeekYear, startOfYear } from 'date-fns'
 import { useFloating } from 'solid-floating-ui'
 
 import { createSignal, For, Show } from 'solid-js'
-import { useActiveEvent } from '../entities/event/event-active'
-import { lifeStore } from '../entities/life/store'
-import { getWeekStyle, now } from './week-styles'
+import { useActiveEvent } from '~/entities/event/event-active'
+import { lifeStore } from '~/entities/life/store'
+import { getWeekStyle } from './week-styles'
 
 export function Calendar() {
   const { colorMode } = useColorMode()
   const activeEvent = useActiveEvent()
 
-  const start = startOfYear(new Date(getYear(lifeStore.birthday), 0, 1))
-  const end = now
+  setDefaultOptions({
+    weekStartsOn: lifeStore.weekStartsOn,
+  })
+
+  const start = startOfWeekYear(lifeStore.birthday)
+  const end = endOfISOWeekYear(new Date())
 
   const weeks = eachWeekOfInterval({ start, end })
 

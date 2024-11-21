@@ -1,4 +1,5 @@
-import { JSX } from "solid-js";
+import type { Day } from "date-fns";
+import type { JSX } from "solid-js";
 
 export type LifeEvent = {
   /** ISO string. example `1994-03-28` */
@@ -16,6 +17,13 @@ export type LifeLayer = {
 
 export type LifeStore = {
   showSettings: boolean
+  showLayers: boolean
+  
+  /**
+   * 0 - Sunday
+   * 1 - Monday
+  */
+  weekStartsOn: Day
   /** Date of birth in ISO format `yyyy-mm-dd`.*/
   birthday: string
   activeLayerIndex: number
