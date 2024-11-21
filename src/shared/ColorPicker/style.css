@@ -1,0 +1,15 @@
+.picker__input::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: inherit;
+}
+.picker__input:disabled {
+  opacity: 0.5;
+}
+.picker__input:hover {
+  transform: scale(1.12);
+}
