@@ -4,11 +4,12 @@ export default antfu(
   {
     unocss: true,
     solid: true,
+    typescript: true,
   },
   {
     rules: {
       'jsonc/sort-keys': 'off',
-      'unocss/order-attributify': 'off',
+      'unocss/order': 'off',
       'no-console': 'off',
     },
   },

@@ -1,4 +1,4 @@
-import { useColorMode } from '@kobalte/core'
+import { useColorMode } from '@kobalte/core/color-mode'
 import { JSX } from 'solid-js'
 
 type Props = {

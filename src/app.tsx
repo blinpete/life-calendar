@@ -33,7 +33,7 @@ export default function App() {
 
                 <ThemeSwitcher />
               </header>
-              <main class="flex flex-col items-center px-4 pb-50">
+              <main class="flex flex-col items-center px-4">
                 <Suspense>{props.children}</Suspense>
               </main>
             </MetaProvider>

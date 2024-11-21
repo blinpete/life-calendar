@@ -17,6 +17,7 @@ export default defineConfig({
     'bg-subtle': 'bg-gray-400/3',
     'text-main': 'text-[#121212] dark:text-[#ddd]',
     'text-subtle': 'text-[#656565] dark:text-[#909090]',
+    'placeholder': 'placeholder-[#656565] dark:placeholder-[#909090]',
 
     'link': [
       'underline-dashed underline-1.5 underline underline-offset-3',
