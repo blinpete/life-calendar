@@ -1,10 +1,14 @@
 import { Show } from 'solid-js'
+import NewEvent from '~/entities/event/NewEvent'
 import { Layers } from '~/entities/layer/Layers'
 import { lifeStore, setLifeStore } from '~/entities/life/store'
 import { Calendar } from '~/features/Calendar'
+import { handleKeyboard } from '~/features/handleKeyboard'
 import { Welcome } from '~/shared/Welcome'
 
 export default function Home() {
+  handleKeyboard()
+
   return (
     <main class="pb-36">
       <button
@@ -34,6 +38,8 @@ export default function Home() {
           <Layers />
         </div>
       </Show>
+
+      <NewEvent />
 
       <Show
         when={lifeStore.birthday}

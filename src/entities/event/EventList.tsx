@@ -32,29 +32,6 @@ export default function () {
             />
           )}
         </For>
-
-        <Show when={
-          (activeEvent().event.start || activeEvent().event.end)
-          && (activeEventIndex() === null)
-        }
-        >
-          <Event
-            event={newEvent}
-            onUpdate={e => setNewEvent(e)}
-            onSave={() => {
-              setLifeStore(
-                'layers',
-                lifeStore.activeLayerIndex,
-                'events',
-                lifeStore.layers[lifeStore.activeLayerIndex].events.length,
-                { ...newEvent },
-              )
-              resetNewEvent()
-            }}
-            onDelete={() => resetNewEvent()}
-            onActivate={() => setActiveEventIndex(null)}
-          />
-        </Show>
       </div>
     </>
   )
