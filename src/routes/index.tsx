@@ -1,20 +1,21 @@
 import { useNavigate } from '@solidjs/router'
-import { Show } from 'solid-js'
+import { onMount, Show } from 'solid-js'
 import NewEvent from '~/entities/event/NewEvent'
 import { Layers } from '~/entities/layer/Layers'
 import { lifeStore, setLifeStore } from '~/entities/life/store'
 import { Calendar } from '~/features/Calendar'
 import { handleKeyboard } from '~/features/handleKeyboard'
-import { Settings } from '~/features/Settings'
 
 export default function MainPage() {
   handleKeyboard()
 
   const navigate = useNavigate()
 
-  if (!lifeStore.birthday) {
-    navigate('/home', { replace: true })
-  }
+  onMount(() => {
+    if (!lifeStore.birthday) {
+      navigate('/home', { replace: true })
+    }
+  })
 
   return (
     <main class="pb-36">
@@ -50,7 +51,9 @@ export default function MainPage() {
 
       <NewEvent />
 
-      <Calendar />
+      <Show when={lifeStore.birthday}>
+        <Calendar />
+      </Show>
     </main>
   )
 }
