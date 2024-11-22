@@ -7,10 +7,9 @@ export default function About() {
       </h1>
       <div class="mt-8 max-w-130 flex flex-col gap-2 text-subtle">
         <p>
-          A calendar. From the year you were born utill today.
+          A calendar. From the year you were born until today.
           Each row is a year.
           But squares are weeks, not days.
-
         </p>
 
         <p>
