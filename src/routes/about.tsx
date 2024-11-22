@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <main class="flex flex-col items-center">
+    <main class="flex flex-col items-center font-200">
       <h1 class="mt-[10dvh] font-thin uppercase text-main flex flex-col items-end">
         <span class="text-xl text-subtle">What is</span>
         <span class="text-5xl">Life Calendar</span>
@@ -13,8 +13,8 @@ export default function About() {
         </p>
 
         <p>
-          Layer by layer, bring colors to those weeks and watch the story of your life unfold.
-          Celebrate your ups, reflect on downs, relive your precious moments.
+          Layer by layer, color those weeks the same way you did with your life.
+          Celebrate the highs, reflect on the lows and relive your precious moments.
           That's what made you who you are.
         </p>
 

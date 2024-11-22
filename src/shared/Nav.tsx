@@ -9,9 +9,9 @@ export default function Nav() {
 
   return (
     <nav class="flex gap-1.5">
-      <A class={clsx('link', active('/home'))} href="/home">Home</A>
-      <A class={clsx('link', active('/'))} href="/">Calendar</A>
-      <A class={clsx('link', active('/about'))} href="/about">About</A>
+      <A class={clsx('link', active(`${import.meta.env.SERVER_BASE_URL}/home`))} href="/home">Home</A>
+      <A class={clsx('link', active(`${import.meta.env.SERVER_BASE_URL}/`))} href="/">Calendar</A>
+      <A class={clsx('link', active(`${import.meta.env.SERVER_BASE_URL}/about`))} href="/about">About</A>
     </nav>
   )
 }
